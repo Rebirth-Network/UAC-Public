@@ -198,9 +198,16 @@ scoreboard objectives add welcomed dummy welcomed
 scoreboard objectives add entitycount dummy entitycount
 scoreboard objectives add playercount dummy
 scoreboard objectives add tpa dummy
+scoreboard objectives add AFK_Timer dummy
+scoreboard objectives add AFK3 dummy
+scoreboard objectives add AFK2 dummy
+scoreboard objectives add AFK_Soft dummy
+scoreboard players set mode AFK3 2
+scoreboard players set b AFK3 10
 
 
 #module scoreboards
+scoreboard objectives add AAFKM dummy AAFKM
 scoreboard objectives add ACM dummy ACM
 scoreboard objectives add AFM dummy AFM
 scoreboard objectives add APM dummy APM
@@ -229,6 +236,7 @@ scoreboard objectives add OSM dummy
 #Module Toggles
 scoreboard objectives add SSDEBUG dummy SSDEBUG
 scoreboard objectives add afmtoggle dummy afmtoggle
+scoreboard objectives add aafkmtoggle dummy aafkmtoggl
 scoreboard objectives add acmtoggle dummy acmtoggle
 scoreboard objectives add bbmtoggle dummy bbmtoggle
 scoreboard objectives add semtoggle dummy semtoggle
@@ -283,6 +291,7 @@ scoreboard objectives add z-axis dummy y-axis
 
 #Default Toggles
 scoreboard players set @s SSDEBUG 0
+scoreboard players set @s aafkmtoggle 0
 scoreboard players set @s acmtoggle 0
 scoreboard players set @s bbmtoggle 0
 scoreboard players set @s semtoggle 0
@@ -307,6 +316,7 @@ scoreboard players set @s mdmtoggle 0
 scoreboard players set @s osmtoggle 0
 
 #Give everyone default module scoreboard scores
+scoreboard players set @s AAFKM 0
 scoreboard players set @s ACM 0
 scoreboard players set @s AFM 0
 scoreboard players set @s APM 0

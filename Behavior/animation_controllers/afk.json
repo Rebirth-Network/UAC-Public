@@ -1,0 +1,46 @@
+//MADE BY SAM, YT: Sammster 10, XBOX: Sammster 10 YT, DISCORD: Sam.#9999, DISCORD SERVER: discord.gg/9S6K9E5
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.afk": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"Is_Moving": "q.is_moving"
+                        },
+						{
+							"Not_Moving": "!(q.is_moving)"
+                        }
+					]
+				},
+				"moving": {
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/execute @s[scores={AFKM=1}] ~~~ scoreboard players set @s[tag=Not_Moving] AFK_Timer 0",
+						"/execute @s[scores={AFKM=1}] ~~~ scoreboard players reset @s[tag=Not_Moving] AFK2",
+						"/execute @s[scores={AFKM=1}] ~~~ tag @s[tag=Not_Moving] remove AFK",
+						"/execute @s[scores={AFKM=1}] ~~~ tag @s[tag=Not_Moving] remove Not_Moving"
+					]
+                },
+				"notMoving": {
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
+					],
+					"on_entry": [
+						"/execute @s[scores={AFKM=1},tag=!AFK_Bypass] ~~~ function UAC/asset/antiafk",
+						"/execute @s[scores={AFKM=1},tag=!AFK_Bypass] ~~~ tag @s add Not_Moving"
+					]
+                }
+			}
+		}
+	}
+}
+//MADE BY SAM, YT: Sammster 10, XBOX: Sammster 10 YT, DISCORD: Sam.#9999, DISCORD SERVER: discord.gg/9S6K9E5
